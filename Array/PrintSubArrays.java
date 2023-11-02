@@ -55,10 +55,10 @@ public class PrintSubArrays {
                     sum += nums[k];
                     // System.out.print(nums[k] + ",");
                 }
-                if(sum>maxSum){
+                if (sum > maxSum) {
                     maxSum = sum;
                 }
-                System.out.println(" Sum is:  " + sum );
+                System.out.println(" Sum is:  " + sum);
 
             }
             System.out.println();
@@ -67,7 +67,7 @@ public class PrintSubArrays {
     }
 
     public static void main(String[] args) {
-        int numbers[] = { 2, -4, 6, 8, -10 };
+        int numbers[] = { 1, -2, 6, -1, 3 };
 
         // Generate and print subarrays from the array.
         printSubArrays(numbers);
