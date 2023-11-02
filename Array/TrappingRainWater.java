@@ -2,8 +2,42 @@ package Array;
 
 public class TrappingRainWater {
     public static void trappingRainWater(int height[]) {
+
+        /* Optimized Way */
+        int leftLargeArray[] = new int[height.length];
+
+        leftLargeArray[0] = height[0];
+
+        for (int i = 1; i < height.length; i++) {
+
+            leftLargeArray[i] = Math.max(leftLargeArray[i - 1], height[i]);
+        }
+
+        int rightLargeArray[] = new int[height.length];
+
+        rightLargeArray[rightLargeArray.length - 1] = height[height.length - 1];
+
+        for (int i = rightLargeArray.length - 2; i >= 0; i--) {
+            rightLargeArray[i] = Math.max(height[i], rightLargeArray[i + 1]);
+
+        }
+
+        int water = 0;
+        for (int i = 0; i < height.length; i++) {
+            int trapped = Math.min(rightLargeArray[i], leftLargeArray[i]);
+            water += trapped - height[i];
+        }
+        System.out.println(water);
+
+        /* Optimized Way */
+
+
+        /* Bruer force */
         int output = 0;
-        
+        if (height.length <= 2) {
+            System.out.println("o" + output);
+            return;
+        }
 
         for (int i = 0; i < height.length; i++) {
             int leftLarge = 0;
@@ -30,10 +64,11 @@ public class TrappingRainWater {
         }
 
         System.out.println(output);
+        /* Bruer force end */
     }
 
     public static void main(String[] args) {
-        int height[] = { 4, 2, 0, 6, 3, 2, 5 };
+        int height[] = { 4, 2, 6, 3, 2, 4, 5 };
         trappingRainWater(height);
     }
 }
