@@ -1,10 +1,10 @@
 package Array.TwoDArray;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class spiralMatrix {
 
-    public static void spiralMatrix(int matrix[][]) {
+    public static void SpiralMatrix(int matrix[][]) {
         int startRow = 0;
         int starCol = 0;
         int endRow = matrix.length - 1;
@@ -46,7 +46,7 @@ public class spiralMatrix {
                 { 13, 14, 15, 16 }
         };
 
-        spiralMatrix(matrix);
+        SpiralMatrix(matrix);
 
     }
 }
