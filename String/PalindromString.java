@@ -4,9 +4,6 @@ public class PalindromString {
 
     public static boolean isPalindromString(String str) {
         boolean status = true;
-        
-
-        
         String newstring = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         int start = 0;
         int end = newstring.length() - 1;        
